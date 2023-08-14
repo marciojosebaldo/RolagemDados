@@ -16,10 +16,17 @@ public class S_RolagemDados {
 
     Random gerador = new Random();
 
-    public int calculaValorDados(int qtdeFaces, int qtdeDados) {
-        for (int i = 0; i  <= qtdeDados; i++) {
+    public void calculaValorDados(int qtdeFaces, int qtdeDados) {
+        for (int i = 0; i <= qtdeDados; i++) {
+            if (gerador.nextInt() < qtdeFaces) {
+                listaSorteioDados.add(gerador);
+            }
+        }
+    }
+
+    public List gerarListaSorteioDados() {
+        for (int ) {
 
         }
-        return 0;
     }
 }
