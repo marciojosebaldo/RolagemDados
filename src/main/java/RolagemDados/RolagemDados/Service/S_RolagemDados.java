@@ -24,9 +24,7 @@ public class S_RolagemDados {
         }
     }
 
-    public List gerarListaSorteioDados() {
-        for (int ) {
-
-        }
+    public void gerarListaSorteioDados() {
+        listaSorteioDados.forEach(System.out::println);
     }
 }
