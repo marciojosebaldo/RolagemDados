@@ -45,23 +45,16 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
+            <tr th:each="resultado, rowStat : ${lsitaSorteioDados}">
+                <th scope="row" th:text="${rowStat.index + 1}"></th>
+                <td th:text="${resultado}"></td>
             </tr>
             </tbody>
         </table>
     </div>
     <div class="col-sm-6">
-<!--        Soma dos dados e maior resultado aqui-->
+        <h3>Soma dos Dados: <span th:text="${somaDados}"></span></h3>
+        <h3>Maior Resultado: <span th:text="${maiorResultado}"></span></h3>
     </div>
 </div>
 </body>

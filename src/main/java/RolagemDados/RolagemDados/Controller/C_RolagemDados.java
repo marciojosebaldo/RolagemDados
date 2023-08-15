@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 public class C_RolagemDados {
 
@@ -26,7 +28,13 @@ public class C_RolagemDados {
                                @RequestParam("qtdeDados") int qtdeDados,
                                Model model) {
 
+        List<Integer> listaSorteioDados = s_rolagem.gerarListaSorteioDados();
+        int somaDados = s_rolagem.somaDadosLista();
+        int maiorResultado = s_rolagem.maiorResultadoLista();
 
+        model.addAttribute("listaSorteioDados", listaSorteioDados);
+        model.addAttribute("somaDados", somaDados);
+        model.addAttribute("maiorResultado", maiorResultado);
 
         return "Home/home";
     }

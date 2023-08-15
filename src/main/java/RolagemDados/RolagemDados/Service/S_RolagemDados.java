@@ -3,6 +3,7 @@ package RolagemDados.RolagemDados.Service;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 @Service
@@ -27,17 +28,19 @@ public class S_RolagemDados {
         }
     }
 
-    public void gerarListaSorteioDados() {
-        listaSorteioDados.forEach(System.out::println);
+    public List<Integer> gerarListaSorteioDados() {
+        return listaSorteioDados;
     }
 
-    public void somaDadosLista() {
+    public int somaDadosLista() {
         for (Integer n : listaSorteioDados) {
             somaDados += n;
         }
+        return somaDados;
     }
 
-    public void maiorResultadoLista() {
+    public int maiorResultadoLista() {
         maiorResultado = listaSorteioDados.stream().mapToInt(Integer::intValue).max().orElse(0);
+        return maiorResultado;
     }
 }
