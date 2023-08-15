@@ -1,5 +1,5 @@
 # RolagemDados
-Aplicação em Spring Boot para rolagem de dados
+Aplicação em Spring Boot para rolagem de dados onde escolhe a quantidade de dados e a quantidade de faces
 
 Project: Maven
 Language: Java
