@@ -36,26 +36,26 @@
             <div class="col-sm-6 text-right"></div>
         </div>
     </form>
-<!--    <div class="col-sm-6">-->
-<!--        <table class="table table-bordered">-->
-<!--            <thead>-->
-<!--            <tr>-->
-<!--                <th scope="col">Dado(s)</th>-->
-<!--                <th scope="col">Resultado</th>-->
-<!--            </tr>-->
-<!--            </thead>-->
-<!--            <tbody>-->
-<!--            <tr th:each="resultado, rowStat : ${listaSorteioDados}">-->
-<!--                <th scope="row" th:text="${rowStat.index + 1}"></th>-->
-<!--                <td th:text="${resultado}"></td>-->
-<!--            </tr>-->
-<!--            </tbody>-->
-<!--        </table>-->
-<!--    </div>-->
-<!--    <div class="col-sm-6">-->
-<!--        <h3>Soma dos Dados: <span th:text="${somaDados}"></span></h3>-->
-<!--        <h3>Maior Resultado: <span th:text="${maiorResultado}"></span></h3>-->
-<!--    </div>-->
+    <div class="col-sm-6">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">Dado(s)</th>
+                <th scope="col">Resultado</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="resultado, rowStat : ${listaSorteioDados}">
+                <th scope="row" th:text="${rowStat.index + 1}"></th>
+                <td th:text="${resultado}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-sm-6">
+        <h3>Soma dos Dados: <span th:text="${somaDados}"></span></h3>
+        <h3>Maior Resultado: <span th:text="${maiorResultado}"></span></h3>
+    </div>
 </div>
 </body>
 </html>

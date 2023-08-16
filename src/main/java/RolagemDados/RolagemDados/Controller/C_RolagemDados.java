@@ -28,11 +28,11 @@ public class C_RolagemDados {
                                @RequestParam("qtdeDados") int qtdeDados,
                                Model model) {
 
-        List<Integer> listaSorteioDados = s_rolagem.gerarListaSorteioDados();
+        // s_rolagem.calculaValorDados(qtdeFaces, qtdeDados);
         int somaDados = s_rolagem.somaDadosLista();
         int maiorResultado = s_rolagem.maiorResultadoLista();
 
-        model.addAttribute("listaSorteioDados", listaSorteioDados);
+        //model.addAttribute("listaSorteioDados", listaSorteioDados);
         model.addAttribute("somaDados", somaDados);
         model.addAttribute("maiorResultado", maiorResultado);
 

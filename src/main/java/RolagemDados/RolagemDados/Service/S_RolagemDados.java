@@ -1,20 +1,22 @@
 package RolagemDados.RolagemDados.Service;
 
+import RolagemDados.RolagemDados.Model.M_RolagemDados;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 @Service
 public class S_RolagemDados {
 
-    private int qtdeFaces;
-    private int qtdeDados;
+    public static M_RolagemDados(int qtdeFaces, int qtdeDados) {
+        int resultadoDados = 0;
+        int qtdeDados = 0;
+        int
+    }
+
+
     int somaDados = 0;
     int maiorResultado = 0;
-
-    ArrayList<Integer> listaSorteioDados = new ArrayList();
 
     Random gerador = new Random();
 
@@ -26,10 +28,6 @@ public class S_RolagemDados {
             int resultado = gerador.nextInt(qtdeFaces);
             listaSorteioDados.add(resultado);
         }
-    }
-
-    public List<Integer> gerarListaSorteioDados() {
-        return listaSorteioDados;
     }
 
     public int somaDadosLista() {
