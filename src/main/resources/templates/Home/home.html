@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -45,7 +46,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="resultado, rowStat : ${listaSorteioDados}">
+            <tr th:each="resultado, rowStat : ${resultadoDados}">
                 <th scope="row" th:text="${rowStat.index + 1}"></th>
                 <td th:text="${resultado}"></td>
             </tr>
@@ -53,8 +54,8 @@
         </table>
     </div>
     <div class="col-sm-6">
-        <h3>Soma dos Dados: <span th:text="${somaDados}"></span></h3>
-        <h3>Maior Resultado: <span th:text="${maiorResultado}"></span></h3>
+        <h3>Soma dos Dados: <span th:text="${somaRolagemDados}"></span></h3>
+        <h3>Maior Resultado: <span th:text="${valorMaximoRolagemDados}"></span></h3>
     </div>
 </div>
 </body>

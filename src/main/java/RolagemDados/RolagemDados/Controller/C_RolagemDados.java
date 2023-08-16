@@ -1,5 +1,6 @@
 package RolagemDados.RolagemDados.Controller;
 
+import RolagemDados.RolagemDados.Model.M_RolagemDados;
 import RolagemDados.RolagemDados.Service.S_RolagemDados;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,16 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
-
 @Controller
 public class C_RolagemDados {
-
-    private final S_RolagemDados s_rolagem;
-
-    public C_RolagemDados (S_RolagemDados s_rolagem) {
-        this.s_rolagem = s_rolagem;
-    }
 
     @GetMapping("/")
     public String pagInicial(){
@@ -28,13 +21,14 @@ public class C_RolagemDados {
                                @RequestParam("qtdeDados") int qtdeDados,
                                Model model) {
 
-        // s_rolagem.calculaValorDados(qtdeFaces, qtdeDados);
-        int somaDados = s_rolagem.somaDadosLista();
-        int maiorResultado = s_rolagem.maiorResultadoLista();
+        M_RolagemDados m_rolagemDados = S_RolagemDados.rolagemDados(qtdeFaces, qtdeDados);
 
-        //model.addAttribute("listaSorteioDados", listaSorteioDados);
-        model.addAttribute("somaDados", somaDados);
-        model.addAttribute("maiorResultado", maiorResultado);
+        model.addAttribute("qtdeFaces", qtdeFaces);
+        model.addAttribute("qtdeDados", qtdeDados);
+
+        model.addAttribute("resultadoDados", m_rolagemDados.getResultadoDados());
+        model.addAttribute("somaRolagemDados", m_rolagemDados.getSomaRolagemDados());
+        model.addAttribute("valorMaximoRolagemDados", m_rolagemDados.getValorMaximoRolagemDados());
 
         return "Home/home";
     }
