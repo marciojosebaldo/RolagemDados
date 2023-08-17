@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class C_RolagemDados {
 
     @GetMapping("/")
-    public String pagInicial(){
+    public String pagInicial() {
         return "Home/home";
     }
 

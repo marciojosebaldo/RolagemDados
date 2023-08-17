@@ -19,43 +19,45 @@
 
     <form action="/" method="post">
         <div class="input-group mb-3">
-            <span class="input-group-text" id="qtdeFacesCampo"></span>
+            <span class="input-group-text" id="qtdeFacesCampo">F</span>
             <input id="qtdeFaces" name="qtdeFaces" type="number" class="form-control"
-                   placeholder="Quantidade de faces do(s) dado(s)" aria-label="sp_qtdeFaces"
+                   placeholder="Quantidade de faces do dado" aria-label="sp_qtdeFaces"
                    aria-describedby="basic-addon1" th:value="${qtdeFaces}">
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="qtdeDadosCampo"></span>
+            <span class="input-group-text" id="qtdeDadosCampo">D</span>
             <input id="qtdeDados" name="qtdeDados" type="number" class="form-control"
                    placeholder="Quantide de dados a serem jogados" aria-label="sp_qtdeDados"
                    aria-describedby="=basic-addon1" th:value="${qtdeDados}">
         </div>
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-12 text-center">
                 <input value="Jogar" type="submit" class="btn btn-primary"/>
             </div>
             <div class="col-sm-6 text-right"></div>
         </div>
     </form>
-    <div class="col-sm-6">
-        <table class="table table-bordered">
-            <thead>
-            <tr>
-                <th scope="col">Dado(s)</th>
-                <th scope="col">Resultado</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="resultado, rowStat : ${resultadoDados}">
-                <th scope="row" th:text="${rowStat.index + 1}"></th>
-                <td th:text="${resultado}"></td>
-            </tr>
-            </tbody>
-        </table>
+    <div class="row text-center mt-4" th:if="${somaRolagemDados}">
+        <div class="col-sm-6 mx-auto">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th scope="col">Dado</th>
+                    <th scope="col">Resultado</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="resultado, rowStat : ${resultadoDados}">
+                    <td th:text="${rowStat.index + 1}"></td>
+                    <td th:text="${resultado}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div class="col-sm-6">
-        <h3>Soma dos Dados: <span th:text="${somaRolagemDados}"></span></h3>
-        <h3>Maior Resultado: <span th:text="${valorMaximoRolagemDados}"></span></h3>
+    <div class="row text-center mt-4" th:if="${somaRolagemDados}">
+        <h3 class="mx-auto">Soma dos Dados: <span th:text="${somaRolagemDados}"></span></h3>
+        <h3 class="mx-auto">Maior Resultado: <span th:text="${valorMaximoRolagemDados}"></span></h3>
     </div>
 </div>
 </body>

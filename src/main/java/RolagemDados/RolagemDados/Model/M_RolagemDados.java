@@ -5,7 +5,7 @@ public class M_RolagemDados {
     private int somaRolagemDados;
     private int valorMaximoRolagemDados;
 
-    public M_RolagemDados (int[] resultadoDados, int somaRolagemDados, int valorMaximoRolagemDados) {
+    public M_RolagemDados(int[] resultadoDados, int somaRolagemDados, int valorMaximoRolagemDados) {
         this.resultadoDados = resultadoDados;
         this.somaRolagemDados = somaRolagemDados;
         this.valorMaximoRolagemDados = valorMaximoRolagemDados;
